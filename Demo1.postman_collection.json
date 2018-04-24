@@ -1,0 +1,48 @@
+{
+	"id": "1501e867-94e3-47b5-84b9-d3fc604cee66",
+	"name": "Demo1",
+	"description": null,
+	"auth": null,
+	"events": null,
+	"variables": null,
+	"order": [
+		"fbd7182f-e2e9-4a43-9c5f-e8f35847e1d8"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "fbd7182f-e2e9-4a43-9c5f-e8f35847e1d8",
+			"name": "https://jsonplaceholder.typicode.com/posts/1",
+			"url": "https://jsonplaceholder.typicode.com/posts/1",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ff16b2f8-ed6b-4f36-b94e-c2d60808e461",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"your test name\" + jsonData.id] = jsonData.id== 1;",
+							"",
+							"tests[\"your status code is 200\"] = responseCode.code == 200;",
+							"",
+							"tests[\"content type is present\"] = postman.getResponseHeader(\"Content-type\");"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		}
+	]
+}

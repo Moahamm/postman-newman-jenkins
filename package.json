@@ -1,0 +1,14 @@
+{
+  "name": "postman-newman-jenkins",
+  "version": "1.0.0",
+  "description": "project for storing postman test",
+ 
+  "scripts": {
+    "api-tests-production": "newman run Demo1.postman_collection.json"
+  },
+  "author": "sjz",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^3.9.3"
+  }
+}
